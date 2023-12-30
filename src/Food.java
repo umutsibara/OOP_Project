@@ -12,16 +12,16 @@ public interface Food {
 
 class SabahOgun implements Food {
     private final String[] sabahKahvalti = {"Yumurta", "Muz", "Yulaf", "Ispanak", "Badem"};
-    Scanner scn;
-    Kalori kaloriSinifi;
+    static Scanner scn;
+    static Kalori kaloriSinifi;
 
     public SabahOgun() {
         System.out.println("* * * * * Günaydın * * * * *");
     }
 
     public SabahOgun(Scanner scn, Kalori kaloriSinifi) {
-        this.scn = scn;
-        this.kaloriSinifi = kaloriSinifi;
+        SabahOgun.scn = scn;
+        SabahOgun.kaloriSinifi = kaloriSinifi;
     }
 
     @Override
@@ -81,16 +81,16 @@ class SabahOgun implements Food {
 
 class OgleOgun implements Food {
     String[] ogleYemegi = {"Ekmek", "Tavuk Göğsü", "Pilav", "Sebzeli Çorba"};
-    Scanner scn;
-    Kalori kaloriSinifi;
 
+    static Scanner scn;
+    static Kalori kaloriSinifi;
     public OgleOgun() {
         System.out.println("* * * * * Tünaydın * * * * *");
     }
 
     public OgleOgun(Scanner scn, Kalori kaloriSinifi) {
-        this.scn = scn;
-        this.kaloriSinifi = kaloriSinifi;
+        OgleOgun.scn = scn;
+        OgleOgun.kaloriSinifi = kaloriSinifi;
     }
 
     @Override
@@ -145,16 +145,17 @@ class OgleOgun implements Food {
 
 class AksamOgun implements Food {
     String[] aksamYemegi = {"Dana Eti", "Pilav", "Yoğurt", "Ton Balığı"};
-    Scanner scn;
-    Kalori kaloriSinifi;
+
+    static Scanner scn;
+    static Kalori kaloriSinifi;
 
     public AksamOgun() {
         System.out.println("* * * * * İyi Akşamlar * * * * *");
     }
 
     public AksamOgun(Scanner scn, Kalori kaloriSinifi) {
-        this.scn = scn;
-        this.kaloriSinifi = kaloriSinifi;
+        AksamOgun.scn = scn;
+        AksamOgun.kaloriSinifi = kaloriSinifi;
     }
 
     @Override

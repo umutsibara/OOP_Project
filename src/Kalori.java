@@ -19,6 +19,7 @@ public class Kalori {
     public void gramajYaz() {
         System.out.println("Yediğiniz Yemeğin Gramajını Yazınız");
         this.gelenGramaj = scn.nextDouble();
+        scn.nextLine();
         setGramajToplam(gelenGramaj);
     }
 
