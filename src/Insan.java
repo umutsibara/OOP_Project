@@ -10,7 +10,7 @@ public class Insan {
     private int yas;
 
     public Insan(Scanner scn) {
-        System.out.println("| | | | | Hoş Geldiniz | | | | |");
+        System.out.println("\u001B[32m| | | | | Hoş Geldiniz | | | | |\u001B[0m");
         this.scn = scn;
     }
 
@@ -58,7 +58,7 @@ public class Insan {
             this.ogleYemek = ogleYemek;
             this.aksamYemek = aksamYemek;
             this.kaloriSinifi = kaloriSinifi;
-            System.out.println(" - - - - - - - - - - - - - - - - - - - -\nMerhaba " + isim + " Bey");
+            System.out.println(" - - - - - - - - - - - - - - - - - - - -\n\tMerhaba " + isim + " Bey");
             setBmr();
             System.out.println("Bugün Almanız Gereken Kalori Miktarı: " + Math.floor(bmr) + "\n- - - - - - - - - - - - - - - - - - - -");
         }

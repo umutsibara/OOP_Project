@@ -41,11 +41,11 @@ public class Kalori {
     }
 
     public void degerleriYazdir() {
-        System.out.println("Kaç Gram Yediniz: " + gramajToplam);
-        System.out.print("Alınan \tToplam Kalori: " + kaloriToplam);
-        System.out.print("\tToplam Protein: " + proteinToplam);
-        System.out.print("\tToplam Yağ: " + yagToplam);
-        System.out.println("\tToplam Şeker: " + sekerToplam);
+        System.out.println(gramajToplam + "Gram Yemek Yediniz: ");
+        System.out.print("Alınan \tToplam Kalori: " + Math.floor(kaloriToplam));
+        System.out.print("\tToplam Protein: " + Math.floor(proteinToplam));
+        System.out.print("\tToplam Yağ: " + Math.floor(yagToplam));
+        System.out.println("\tToplam Şeker: " + Math.floor(sekerToplam));
         if (kaloriToplam < bmr)
             System.out.println("\u001B[32mAlmanız Gerekenden " + Math.floor((bmr - kaloriToplam)) + " Kadar Az Kalori Aldınız\u001B[0m");//Yeşil Yazı
         else if (kaloriToplam >= bmr)
