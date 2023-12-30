@@ -13,9 +13,6 @@ public class Insan {
         System.out.println("| | | | | Hoş Geldiniz | | | | |");
         this.scn = scn;
     }
-    public double getBmr(){
-        return bmr;
-    }
 
     public String getCinsiyet() {
         return cinsiyet;
@@ -63,7 +60,7 @@ public class Insan {
             this.kaloriSinifi = kaloriSinifi;
             System.out.println(" - - - - - - - - - - - - - - - - - - - -\nMerhaba " + isim + " Bey");
             setBmr();
-            System.out.println("Bugün Almanız Gereken Kalori Miktarı: "+ Math.floor(bmr)+"\n- - - - - - - - - - - - - - - - - - - -");
+            System.out.println("Bugün Almanız Gereken Kalori Miktarı: " + Math.floor(bmr) + "\n- - - - - - - - - - - - - - - - - - - -");
         }
 
         public void setBmr() {
@@ -112,7 +109,7 @@ public class Insan {
             this.kaloriSinifi = kaloriSinifi;
             System.out.println("- - - - - - - - - - - - - - - - - - - -\n\tMerhaba " + isim + " Hanım");
             setBmr();
-            System.out.println("Bugün Almanız Gereken Kalori Miktarı: "+ Math.floor(bmr)+"\n- - - - - - - - - - - - - - - - - - - -");
+            System.out.println("Bugün Almanız Gereken Kalori Miktarı: " + Math.floor(bmr) + "\n- - - - - - - - - - - - - - - - - - - -");
         }
 
         public void setBmr() {
