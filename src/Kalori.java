@@ -9,20 +9,18 @@ public class Kalori {
         this.scn = scn;
     }
 
-    Kalori(double bmr) {
-        this.bmr = bmr;
-    }
-    public void method1(Insan insan){
-        String kaloriDegeri = insan.getCinsiyet();
-    }
-
     public void gramajYaz() {
         System.out.println("Yediğiniz Yemeğin Gramajını Yazınız");
         this.gelenGramaj = scn.nextDouble();
         scn.nextLine();
         setGramajToplam(gelenGramaj);
     }
+    public void bmrGoster(){
 
+    }
+    public void setBmr(double bmr){
+        this.bmr = bmr;
+    }
     private void setGramajToplam(double gramaj) {
         gramajToplam = gramajToplam + gramaj;
     }
@@ -45,11 +43,13 @@ public class Kalori {
 
     public void degerleriYazdir() {
         System.out.println("Kaç Gram Yediniz: " + gramajToplam);
-        System.out.println("Alınan Toplam Kalori: " + kaloriToplam);
-        System.out.println("Alınan Toplam Protein: " + proteinToplam);
-        System.out.println("Alınan Toplam Yağ: " + yagToplam);
-        System.out.println("Alınan Toplam Şeker: " + sekerToplam);
-
+        System.out.print("Alınan \tToplam Kalori: " + kaloriToplam);
+        System.out.print("\tToplam Protein: " + proteinToplam);
+        System.out.print("\tToplam Yağ: " + yagToplam);
+        System.out.println("\tToplam Şeker: " + sekerToplam);
+        if (kaloriToplam<bmr)
+            System.out.println("\u001B[32mAlmanız Gerekenden " + Math.floor((bmr - kaloriToplam)) + " Kadar Az Kalori Aldınız\u001B[0m");//Yeşil Yazı
+        else if (kaloriToplam>=bmr)
+            System.out.println("\u001B[32mAlmanız Gerekenden " + Math.floor((bmr - kaloriToplam)) + " Kadar Fazla Kalori Aldınız\u001B[0m");//Yeşil Yazı
     }
-
 }

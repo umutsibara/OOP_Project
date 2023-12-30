@@ -6,8 +6,6 @@ public interface Food {
     void gramajYaz();
 
     void besinDegleriniGonder(double kalori, double protein, double yag, double seker);
-
-
 }
 
 class SabahOgun implements Food {
@@ -64,7 +62,7 @@ class SabahOgun implements Food {
                     yiyecekSec();
                     break;
             }
-            System.out.println("Farklı Yiyecek Seçmek İstiyor Musunuz?\n(Evet için E - Hayır için H) giriniz.");
+            System.out.println("\u001B[31mFarklı Yiyecek Seçmek İstiyor Musunuz?\tEvet: E - Hayır: H\u001B[0m");//Kırmızı Yazı
             devamEt = scn.nextLine();
         } while (devamEt.equalsIgnoreCase("e"));
     }
@@ -84,6 +82,7 @@ class OgleOgun implements Food {
 
     static Scanner scn;
     static Kalori kaloriSinifi;
+
     public OgleOgun() {
         System.out.println("* * * * * Tünaydın * * * * *");
     }
@@ -129,7 +128,7 @@ class OgleOgun implements Food {
                     yiyecekSec();
                     break;
             }
-            System.out.println("Farklı Yiyecek Seçmek İstiyor Musunuz?\n(Evet için E - Hayır için H) giriniz.");
+            System.out.println("\u001B[31mFarklı Yiyecek Seçmek İstiyor Musunuz?\tEvet: E - Hayır: H\u001B[[0m");//Kırmızı Yazı
             devamEt = scn.nextLine();
         } while (devamEt.equalsIgnoreCase("e"));
     }
@@ -162,6 +161,7 @@ class AksamOgun implements Food {
     public void gramajYaz() {
         kaloriSinifi.gramajYaz();
     }
+
     @Override
     public void yiyecekSec() {
         String devamEt = "e";
@@ -192,7 +192,7 @@ class AksamOgun implements Food {
                     yiyecekSec();
                     break;
             }
-            System.out.println("Farklı Yiyecek Seçmek İstiyor Musunuz?\n(Evet için E - Hayır için H) giriniz.");
+            System.out.println("\u001B[31mFarklı Yiyecek Seçmek İstiyor Musunuz?\tEvet: E - Hayır: H\u001B[0m");//Kırmızı Yazı
             devamEt = scn.nextLine();
         } while (devamEt.equalsIgnoreCase("e"));
     }

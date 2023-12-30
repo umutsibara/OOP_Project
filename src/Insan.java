@@ -13,6 +13,9 @@ public class Insan {
         System.out.println("| | | | | Hoş Geldiniz | | | | |");
         this.scn = scn;
     }
+    public double getBmr(){
+        return bmr;
+    }
 
     public String getCinsiyet() {
         return cinsiyet;
@@ -58,11 +61,14 @@ public class Insan {
             this.ogleYemek = ogleYemek;
             this.aksamYemek = aksamYemek;
             this.kaloriSinifi = kaloriSinifi;
-            System.out.println("------------------\nMerhaba " + isim + " Bey\n------------------");
+            System.out.println(" - - - - - - - - - - - - - - - - - - - -\nMerhaba " + isim + " Bey");
+            setBmr();
+            System.out.println("Bugün Almanız Gereken Kalori Miktarı: "+ Math.floor(bmr)+"\n- - - - - - - - - - - - - - - - - - - -");
         }
 
-        public double setBmr() {
-            return (88.362 + (13.397 * kilo) + (4.799 * boy) - (5.677 * yas) * aktivite);
+        public void setBmr() {
+            bmr = (88.362 + (13.397 * kilo) + (4.799 * boy) - (5.677 * yas) * aktivite);
+            kaloriSinifi.setBmr(bmr);
         }
 
         public void ogunSecimi() {
@@ -85,7 +91,7 @@ public class Insan {
                 ogunSecimi();
             }
 
-            System.out.println("Tekrar Öğün Seçmek İster Misiniz?\nEvet: E - Hayır: H");
+            System.out.println("\u001B[31mTekrar Öğün Seçmek İster Misiniz?\tEvet: E - Hayır: H\u001B[0m");//Kırmızı Yazı
             if (scn.nextLine().equalsIgnoreCase("e"))
                 ogunSecimi();
             else {
@@ -104,11 +110,14 @@ public class Insan {
             this.ogleYemek = ogleYemek;
             this.aksamYemek = aksamYemek;
             this.kaloriSinifi = kaloriSinifi;
-            System.out.println("------------------\nMerhaba " + isim + " Hanım\n------------------");
+            System.out.println("- - - - - - - - - - - - - - - - - - - -\n\tMerhaba " + isim + " Hanım");
+            setBmr();
+            System.out.println("Bugün Almanız Gereken Kalori Miktarı: "+ Math.floor(bmr)+"\n- - - - - - - - - - - - - - - - - - - -");
         }
 
-        public double setBmr() {
-            return (88.362 + (13.397 * kilo) + (4.799 * boy) - (5.677 * yas) * aktivite);
+        public void setBmr() {
+            bmr = (88.362 + (13.397 * kilo) + (4.799 * boy) - (5.677 * yas) * aktivite);
+            kaloriSinifi.setBmr(bmr);
         }
 
         public void ogunSecimi() {
@@ -131,7 +140,7 @@ public class Insan {
                 ogunSecimi();
             }
 
-            System.out.println("Tekrar Öğün Seçmek İster Misiniz?\nEvet: E - Hayır: H");
+            System.out.println("\u001B[31mTekrar Öğün Seçmek İster Misiniz?\tEvet: E - Hayır: H\u001B[0m");//Kırmızı Yazı
             if (scn.nextLine().equalsIgnoreCase("e"))
                 ogunSecimi();
             else {

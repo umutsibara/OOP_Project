@@ -25,7 +25,7 @@ public class Main {
             System.out.println("Çok Önemli Hata!!!\n" + "Hata Mesajı: " +e);
         }
         finally {
-            System.out.println("Uygulamayı Tekrar Başlamak İçin\n(Evet: E - Hayır: H)");
+            System.out.println("\u001B[31mUygulamayı Tekrar Başlamak İstiyor Musunuz?\tEvet: E - Hayır: H\u001B[0m");//Kırmızı Yazı
             if (scn.nextLine().equalsIgnoreCase("e")) {
                 calistir();
             }
