@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Kalori {
-    Scanner scn;
+    private Scanner scn;
     private static double kaloriToplam = 0, proteinToplam = 0, yagToplam = 0, sekerToplam = 0, gramajToplam = 0;
     private double gelenGramaj, bmr;
 

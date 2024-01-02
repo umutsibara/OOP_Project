@@ -1,7 +1,8 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Insan {
-    Scanner scn;
+    private Scanner scn;
     private String isim, secilenOgun;
     private String cinsiyet;
     private double boy, kilo, aktivite;
@@ -18,40 +19,78 @@ public class Insan {
         return cinsiyet;
     }
 
+    private void kiloGir(){
+        System.out.println("Kilonuzu Giriniz: ");
+        try {
+            kilo = scn.nextDouble();
+        }catch (InputMismatchException e){
+            System.out.println("Lütfen bir sayı giriniz.");
+            scn.next();
+            kiloGir();
+        }
+    }
+    private void boyGir(){
+        System.out.println("Boyunuzu Giriniz: ");
+        try {
+            boy = scn.nextDouble();
+        }catch (InputMismatchException e){
+            System.out.println("Lütfen bir sayı giriniz.");
+            scn.next();
+            boyGir();
+        }
+    }
+    private void yasGir(){
+        System.out.println("Yaşınızı Giriniz: ");
+        try {
+            yas = scn.nextInt();
+        }catch (InputMismatchException e){
+            System.out.println("Lütfen bir sayı giriniz.");
+            scn.next();
+            yasGir();
+        }
+    }
+    private void aktiviteGir(){
+        System.out.println("Günlük Hareket Seviyenizi Giriniz\n1-Az Hareketli\n2-Orta Hareketli\n3-Çok Hareketli ");
+        try {
+            aktivite = scn.nextInt();
+            scn.nextLine();
+            if (aktivite == 1)
+                aktivite = 1.28;
+            else if (aktivite == 2)
+                aktivite = 1.55;
+            else if (aktivite == 3)
+                aktivite = 1.81;
+            else
+                throw new Exception();
+        }catch (InputMismatchException e){
+            System.out.println("Lütfen Bir Sayı Giriniz: ");
+            scn.next();
+            aktiviteGir();
+        }catch (Exception e){
+            System.out.println("1,2 veya 3 sayısını giriniz.");
+            aktiviteGir();
+        }
+    }
     public void bilgiAl() {
-
         System.out.println("İsminizi Giriniz: ");
         isim = scn.nextLine();
 
         System.out.println("Cinsiyetinizi Giriniz: \n(Erkek \\ Kadın)");
         cinsiyet = scn.nextLine();
 
-        System.out.println("Boyunuzu Giriniz: ");
-        boy = scn.nextDouble();
+        boyGir();
 
-        System.out.println("Kilonuzu Giriniz: ");
-        kilo = scn.nextDouble();
+        kiloGir();
 
-        System.out.println("Yaşınızı Giriniz: ");
-        yas = scn.nextInt();
+        yasGir();
 
-        System.out.println("Günlük Hareket Seviyenizi Giriniz\n1-Az Hareketli\n2-Orta Hareketli\n3-Çok Hareketli ");
-        aktivite = scn.nextInt();
-        scn.nextLine();
-        if (aktivite == 1)
-            aktivite = 1.28;
-        else if (aktivite == 2)
-            aktivite = 1.55;
-        else if (aktivite == 3)
-            aktivite = 1.81;
-
-
+        aktiviteGir();
     }
 
     //Inner CLASS!!!
     public class Erkek {
-        Food sabahYemek, ogleYemek, aksamYemek;
-        Kalori kaloriSinifi;
+        private Food sabahYemek, ogleYemek, aksamYemek;
+        private Kalori kaloriSinifi;
 
         public Erkek(Food sabahYemek, Food ogleYemek, Food aksamYemek, Kalori kaloriSinifi) {
             this.sabahYemek = sabahYemek;
@@ -99,8 +138,8 @@ public class Insan {
     }
 
     public class Kadin {
-        Food sabahYemek, ogleYemek, aksamYemek;
-        Kalori kaloriSinifi;
+        private Food sabahYemek, ogleYemek, aksamYemek;
+        private Kalori kaloriSinifi;
 
         public Kadin(Food sabahYemek, Food ogleYemek, Food aksamYemek, Kalori kaloriSinifi) {
             this.sabahYemek = sabahYemek;

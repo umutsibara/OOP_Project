@@ -20,6 +20,8 @@ public class Main {
                     insan.getCinsiyet().equalsIgnoreCase("k") || insan.getCinsiyet().equals("2")) {
                 Insan.Kadin insanKadin = insan.new Kadin(sabahYemek, ogleYemek, aksamYemek, kaloriSinifi);
                 insanKadin.ogunSecimi();
+            }else {
+                System.out.println("Geçersiz Cinsiyet.");
             }
         } catch (Exception e) {
             System.out.println("Çok Önemli Hata!!!\n" + "Hata Mesajı: " + e);

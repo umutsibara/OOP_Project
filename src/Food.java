@@ -10,8 +10,8 @@ public interface Food {
 
 class SabahOgun implements Food {
     private final String[] sabahKahvalti = {"Yumurta", "Muz", "Yulaf", "Ispanak", "Badem"};
-    static Scanner scn;
-    static Kalori kaloriSinifi;
+    static private Scanner scn;
+    static private Kalori kaloriSinifi;
 
     public SabahOgun() {
         System.out.println("* * * * * Günaydın * * * * *");
@@ -78,10 +78,10 @@ class SabahOgun implements Food {
 }
 
 class OgleOgun implements Food {
-    String[] ogleYemegi = {"Ekmek", "Tavuk Göğsü", "Pilav", "Sebzeli Çorba"};
+    private String[] ogleYemegi = {"Ekmek", "Tavuk Göğsü", "Pilav", "Sebzeli Çorba"};
 
-    static Scanner scn;
-    static Kalori kaloriSinifi;
+    static private Scanner scn;
+    static private Kalori kaloriSinifi;
 
     public OgleOgun() {
         System.out.println("* * * * * Tünaydın * * * * *");
@@ -145,8 +145,8 @@ class OgleOgun implements Food {
 class AksamOgun implements Food {
     String[] aksamYemegi = {"Dana Eti", "Pilav", "Yoğurt", "Ton Balığı"};
 
-    static Scanner scn;
-    static Kalori kaloriSinifi;
+    static private Scanner scn;
+    static private Kalori kaloriSinifi;
 
     public AksamOgun() {
         System.out.println("* * * * * İyi Akşamlar * * * * *");
