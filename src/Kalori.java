@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Kalori {
@@ -11,9 +12,15 @@ public class Kalori {
 
     public void gramajYaz() {
         System.out.println("Yediğiniz Yemeğin Gramajını Yazınız");
-        this.gelenGramaj = scn.nextDouble();
-        scn.nextLine();
-        setGramajToplam(gelenGramaj);
+        try{
+            this.gelenGramaj = scn.nextDouble();
+            scn.nextLine();
+            setGramajToplam(gelenGramaj);
+        }catch (InputMismatchException e){
+            System.out.println("Lütfen Bir Sayı Giriniz.");
+            scn.next();
+            gramajYaz();
+        }
     }
 
     public void setBmr(double bmr) {

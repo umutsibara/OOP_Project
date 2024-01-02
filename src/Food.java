@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public interface Food {
@@ -30,14 +31,20 @@ class SabahOgun implements Food {
     @Override
     public void yiyecekSec() {
         String devamEt = "e";
-        int secim;
+        int secim=0;
 
         do {
             for (int i = 0; i < sabahKahvalti.length; i++) {
                 System.out.println((i + 1) + " - " + sabahKahvalti[i]);
             }
             System.out.println("Lütfen Yediğiniz Yemeği Seçiniz \n(1,2,3,4,5)");
-            secim = scn.nextInt();
+            try {
+                secim = scn.nextInt();
+            }catch (InputMismatchException e){
+                System.out.println("Lütfen Bir Sayı Giriniz.");
+                scn.next();
+                yiyecekSec();
+            }
 
             gramajYaz();
 
@@ -100,13 +107,20 @@ class OgleOgun implements Food {
     @Override
     public void yiyecekSec() {
         String devamEt = "e";
-        int secim;
+        int secim=0;
         do {
             for (int i = 0; i < ogleYemegi.length; i++) {
                 System.out.println((i + 1) + " - " + ogleYemegi[i]);
             }
+
             System.out.println("Lütfen Yediğiniz Yemeği Seçiniz \n(1,2,3,4)");
-            secim = scn.nextInt();
+            try {
+                secim = scn.nextInt();
+            }catch (InputMismatchException e){
+                System.out.println("Lütfen Bir Sayı Giriniz.");
+                scn.next();
+                yiyecekSec();
+            }
 
             gramajYaz();
 
@@ -165,13 +179,20 @@ class AksamOgun implements Food {
     @Override
     public void yiyecekSec() {
         String devamEt = "e";
-        int secim;
+        int secim=0;
         do {
             for (int i = 0; i < aksamYemegi.length; i++) {
                 System.out.println((i + 1) + " - " + aksamYemegi[i]);
             }
             System.out.println("Lütfen Yediğiniz Yemeği Seçiniz \n(1,2,3,4)");
-            secim = scn.nextInt();
+            try {
+                secim = scn.nextInt();
+            }catch (InputMismatchException e){
+                System.out.println("Lütfen Bir Sayı Giriniz.");
+                scn.next();
+                yiyecekSec();
+            }
+
             gramajYaz();
 
             switch (secim) {
